@@ -63,6 +63,7 @@ class WeaviateWCS:
             cluster_url=self.endpoint,
             auth_credentials=Auth.api_key(api_key),
             skip_init_checks=True,
+            connection_params={"timeout": 120},  # Set timeout to 120 seconds (adjust as needed)
         )
         self.model_name_or_path = model_name_or_path
         if self.model_name_or_path in self.OPENAI_EMBEDDING_MODELS:
